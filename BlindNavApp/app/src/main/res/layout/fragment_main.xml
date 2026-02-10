@@ -1,26 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    android:gravity="center">
+    android:fillViewport="true"
+    android:background="@color/black">
 
-    <ImageView
-        android:id="@+id/ivMic"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:contentDescription="Microphone"
-        android:src="@android:drawable/ic_btn_speak_now"
-        android:tint="@color/neon_yellow"
-        android:layout_centerInParent="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ivMic"
-        android:layout_marginTop="32dp"
-        android:text="@string/main_instruction"
-        style="@style/HighContrastText"
-        android:gravity="center"/>
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
-</RelativeLayout>
+        <!-- Initial Spacer -->
+        <View android:layout_width="match_parent" android:layout_height="48dp"/>
+
+        <!-- Mic Icon Circle -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <!-- Pulse Effect (Simplified as background for now) -->
+            <View
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/bg_circle_blue_border"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:tint="@color/black"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_title"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"/>
+
+        <!-- Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_desc"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Navigation Command Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_yellow_border"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:layout_marginTop="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cmd_nav_title"
+                android:textColor="@color/yellow_400"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cmd_nav_desc"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Walking Command Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_yellow_border"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cmd_walk_title"
+                android:textColor="@color/yellow_400"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cmd_walk_desc"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Bottom Spacer -->
+        <View android:layout_width="match_parent" android:layout_height="100dp"/>
+
+    </LinearLayout>
+</ScrollView>

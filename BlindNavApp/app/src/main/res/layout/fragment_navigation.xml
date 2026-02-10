@@ -1,28 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:fillViewport="true"
+    android:background="@color/black">
 
-    <TextView
-        android:id="@+id/tvDestination"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/destination_prefix"
-        style="@style/HighContrastText"
-        android:textSize="32sp"
-        android:gravity="center"/>
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="500m"
-        style="@style/HighContrastText"
-        android:textSize="64sp"
-        android:textColor="@color/neon_yellow"/>
+        <View android:layout_width="match_parent" android:layout_height="48dp"/>
 
-</LinearLayout>
+        <!-- MapPin Icon Circle -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <View
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/bg_circle_green_border"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_dialog_map"
+                android:tint="@color/black"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_destination_label"
+            android:textColor="@color/yellow_400"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"/>
+
+        <TextView
+            android:id="@+id/tvDestination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울역"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Distance Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_green_border"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:layout_marginTop="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_remaining_label"
+                android:textColor="@color/yellow_400"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+             <TextView
+                android:id="@+id/tvDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="850"
+                android:textColor="@color/green_400"
+                android:textSize="64sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unit_meter"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Guidance Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_blue_border"
+            android:padding="24dp"
+            android:layout_marginTop="24dp">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_guiding_text"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="100dp"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,7 +1,31 @@
 <resources>
     <string name="app_name">BlindNav</string>
-    <string name="main_instruction">Double tap for instructions.\nLong press to speak.</string>
-    <string name="nav_instruction">Navigation Mode</string>
-    <string name="walk_instruction">Walking Mode</string>
-    <string name="destination_prefix">Destination: </string>
+    
+    <!-- Global Instructions -->
+    <string name="bottom_instruction">화면을 길게 눌러 음성 명령을 시작하세요</string>
+    <string name="listening_status">음성 인식 중...</string>
+    
+    <!-- Main Screen -->
+    <string name="main_title">음성 길 안내</string>
+    <string name="main_desc">화면을 길게 눌러\n음성으로 목적지를 설정하거나\n보행 모드를 시작하세요</string>
+    <string name="cmd_nav_title">"네비게이션" 명령</string>
+    <string name="cmd_nav_desc">목적지 안내를 시작합니다</string>
+    <string name="cmd_walk_title">"보행 모드" 명령</string>
+    <string name="cmd_walk_desc">보행 안전 모드를 활성화합니다</string>
+    
+    <!-- Navigation Screen -->
+    <string name="nav_destination_label">목적지</string>
+    <string name="nav_remaining_label">남은 거리</string>
+    <string name="unit_meter">미터</string>
+    <string name="nav_guiding_text">목적지까지 안내 중입니다\n<font color="#FACC15">음성 안내를 따라 이동하세요</font></string>
+    
+    <!-- Walking Screen -->
+    <string name="walk_title">보행 안전 모드</string>
+    <string name="walk_desc">주변 장애물과 위험 요소를\n실시간으로 감지하여\n안전한 보행을 도와드립니다</string>
+    <string name="walk_step_label">현재 걸음 수</string>
+    <string name="unit_step">걸음</string>
+    <string name="status_env_title">주변 환경 감지 활성화</string>
+    <string name="status_env_desc">안전한 경로 안내 중</string>
+    <string name="status_voice_title">음성 안내 활성화</string>
+    <string name="status_voice_desc">실시간 정보 제공 중</string>
 </resources>
