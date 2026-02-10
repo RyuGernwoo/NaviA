@@ -132,7 +132,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             // Enhanced mapping for Navigation with common misspellings/short forms
             normalized.contains("네비") || normalized.contains("내비") || normalized.contains("길안내") -> {
                 speak("목적지를 말씀해주세요.")
-                showStatusPopup("길안내 화면으로 이동", autoHide = true)
+                showStatusPopup("네비게이션으로 이동", autoHide = true)
                 navigateToFragment(NavigationFragment.newInstance("서울역")) // Defaulting for demo
             }
             // Enhanced mapping for Walking
