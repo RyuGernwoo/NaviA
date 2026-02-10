@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BlindNav</string>
+    <string name="main_instruction">Double tap for instructions.\nLong press to speak.</string>
+    <string name="nav_instruction">Navigation Mode</string>
+    <string name="walk_instruction">Walking Mode</string>
+    <string name="destination_prefix">Destination: </string>
+</resources>
