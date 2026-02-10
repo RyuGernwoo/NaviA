@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- Listening Indicator (Yellow Pill) -->
+    <!-- Listening/Status Indicator (Yellow Pill) -->
     <LinearLayout
         android:id="@+id/listening_indicator"
         android:layout_width="wrap_content"
@@ -27,17 +27,20 @@
         android:layout_marginTop="32dp">
 
         <ImageView
+            android:id="@+id/status_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@android:drawable/ic_btn_speak_now"
-            app:tint="@color/black" />
+            app:tint="@color/yellow_400" />
 
         <TextView
+            android:id="@+id/status_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/listening_status"
-            android:textColor="@color/black"
+            android:textColor="@color/yellow_400"
             android:textStyle="bold"
+            android:textSize="20sp"
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
