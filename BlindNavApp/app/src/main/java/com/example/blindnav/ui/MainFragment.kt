@@ -19,6 +19,6 @@ class MainFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as? MainActivity)?.speak("Main Screen. Long press anywhere to speak.")
+        (activity as? MainActivity)?.speak("음성 길 안내. 화면을 길게 눌러 음성으로 목적지를 설정하세요.")
     }
 }

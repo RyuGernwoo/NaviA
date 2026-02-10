@@ -43,21 +43,27 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     private fun setupSpeechRecognition() {
+        val listeningView = findViewById<android.view.View>(R.id.listening_indicator)
+        
         speechUtils = SpeechUtils(this, 
             onResult = { command ->
+                listeningView.visibility = android.view.View.GONE
                 handleVoiceCommand(command)
             },
             onError = {
+                listeningView.visibility = android.view.View.GONE
                 hapticUtils.vibrateError()
-                speak("I didn't catch that. Please try again.")
+                speak("음성을 인식하지 못했습니다. 다시 시도해 주세요.")
             }
         )
     }
 
     private fun setupGestureDetector() {
+        val listeningView = findViewById<android.view.View>(R.id.listening_indicator)
         gestureDetector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
             override fun onLongPress(e: MotionEvent) {
                 hapticUtils.vibrateSuccess()
+                listeningView.visibility = android.view.View.VISIBLE
                 speechUtils.startListening()
             }
         })
@@ -69,22 +75,24 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     private fun handleVoiceCommand(command: String) {
-        val lowerCommand = command.lowercase()
+        // Remove spaces for easier matching
+        val normalized = command.replace(" ", "")
+        
         when {
-            lowerCommand.contains("navigation") || lowerCommand.contains("go to") -> {
-                speak("Where would you like to go?")
-                navigateToFragment(NavigationFragment())
+            normalized.contains("네비게이션") || normalized.contains("길안내") -> {
+                speak("목적지를 말씀해주세요.")
+                navigateToFragment(NavigationFragment.newInstance("서울역")) // Defaulting for demo
             }
-            lowerCommand.contains("walking") || lowerCommand.contains("walk") -> {
-                speak("Starting walking mode.")
+            normalized.contains("보행") || normalized.contains("걷기") -> {
+                speak("보행 안전 모드를 시작합니다.")
                 navigateToFragment(WalkingFragment())
             }
-            lowerCommand.contains("main") || lowerCommand.contains("home") -> {
-                speak("Returning to main screen.")
+            normalized.contains("메인") || normalized.contains("홈") || normalized.contains("처음") -> {
+                speak("메인 화면으로 이동합니다.")
                 navigateToFragment(MainFragment())
             }
             else -> {
-                speak("Command not recognized: $command")
+                speak("알 수 없는 명령입니다: $command")
             }
         }
     }

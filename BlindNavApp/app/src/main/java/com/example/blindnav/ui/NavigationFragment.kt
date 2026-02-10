@@ -33,12 +33,12 @@ class NavigationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_navigation, container, false)
-        view.findViewById<TextView>(R.id.tvDestination).text = "Destination: $destination"
+        view.findViewById<TextView>(R.id.tvDestination).text = destination
         return view
     }
 
     override fun onResume() {
         super.onResume()
-        (activity as? MainActivity)?.speak("Navigating to $destination. Distance is 500 meters.")
+        (activity as? MainActivity)?.speak("$destination 안내를 시작합니다. 남은 거리는 850미터입니다.")
     }
 }

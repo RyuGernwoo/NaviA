@@ -19,6 +19,6 @@ class WalkingFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as? MainActivity)?.speak("Walking mode active. Walk straight.")
+        (activity as? MainActivity)?.speak("보행 안전 모드입니다. 주변 위험을 감지합니다.")
     }
 }
