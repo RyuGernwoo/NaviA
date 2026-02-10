@@ -15,23 +15,23 @@ class HapticUtils(context: Context) {
         context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     }
 
-    fun vibrateClick() {
+    fun vibrateTick() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            vibrator.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK))
+            vibrator.vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_TICK))
         } else {
             @Suppress("DEPRECATION")
-            vibrator.vibrate(50)
+            vibrator.vibrate(10)
         }
     }
 
-    fun vibrateSuccess() {
+    fun vibrateDouble() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val timings = longArrayOf(0, 50, 50, 100)
+            val timings = longArrayOf(0, 100, 50, 100)
             val amplitudes = intArrayOf(0, 255, 0, 255)
             vibrator.vibrate(VibrationEffect.createWaveform(timings, amplitudes, -1))
         } else {
             @Suppress("DEPRECATION")
-            vibrator.vibrate(longArrayOf(0, 50, 50, 100), -1)
+            vibrator.vibrate(longArrayOf(0, 100, 50, 100), -1)
         }
     }
 
