@@ -9,9 +9,9 @@
     <string name="main_title">NaviA</string>
     <string name="main_desc">화면을 길게 눌러\n음성으로 지시하세요</string>
     <string name="cmd_nav_title">"네비게이션"</string>
-    <string name="cmd_nav_desc">NaviA의 편안하고 안전한 안내</string>
+    <string name="cmd_nav_desc">NaviA의 편안하고\n안전한 안내</string>
     <string name="cmd_walk_title">"보행 모드"</string>
-    <string name="cmd_walk_desc">NaviA와 함께하는 자유로운 이동</string>
+    <string name="cmd_walk_desc">NaviA와 함께하는\n자유로운 이동</string>
     
     <!-- Navigation Screen -->
     <string name="nav_destination_label">목적지</string>
