@@ -170,7 +170,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private fun speakInitialGuide() {
         // Delay slightly to ensure TTS is ready and app is visible
         handler.postDelayed({
-            speak("블라인드 네비 앱입니다. 화면을 길게 누르면 음성 명령을 시작할 수 있습니다. 네비게이션 또는 보행이라고 말해보세요.")
+            speak("안녕하세요, 나비아입니다. 화면을 길게 눌러 음성으로 지시할 수 있습니다. 네비게이션 또는 보행이라고 말해보세요.")
         }, 1000)
     }
 
