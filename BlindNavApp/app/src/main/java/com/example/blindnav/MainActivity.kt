@@ -107,6 +107,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         if (ev != null) {
             gestureDetector.onTouchEvent(ev)
+            
+            // Push-to-Talk Logic: Stop listening when touch is released
+            if (ev.action == MotionEvent.ACTION_UP || ev.action == MotionEvent.ACTION_CANCEL) {
+                // We only want to stop if we were actually listening (provoked by long press)
+                // However, safety call to stopListening is harmless if not listening.
+                // To be precise, we could check a flag, but for now calling stopListening is enough
+                // as SpeechUtils handles state.
+                 speechUtils.stopListening()
+            }
         }
         return super.dispatchTouchEvent(ev)
     }
