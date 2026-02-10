@@ -1,0 +1,36 @@
+# General Android
+*.iml
+.gradle/
+.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Android Studio Navigation Editor
+.navigation/
+
+# Gradle
+.gradle
+build/
+
+# Kotlin
+.kotlin
+
+# Proguard
+proguard-logs
+
+# Keystore
+*.jks
+*.keystore
+
+# Google Services
+google-services.json
+
+# Custom Rules
+# Ignore all markdown files by default
+*.md
+# Exception: Allow README.md
+!README.md
